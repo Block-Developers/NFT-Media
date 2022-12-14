@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/NftMedia.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ncontract NftMedia{\r\n    mapping(uint256 => uint256) public like;\r\n    mapping(uint256 => string) public comment;\r\n    mapping(uint256=> uint256) public cmtnos;\r\n    function likeplus(uint256 postno) public{\r\nlike[postno]+=1;\r\n    }\r\n    function commentplus(uint256 postno, string memory cmdData) public{\r\n        comment[postno]= cmdData;\r\n        cmtnos[postno]+=1;\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
